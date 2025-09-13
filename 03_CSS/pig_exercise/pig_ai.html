@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pig Face (HTML + CSS)</title>
+    <style>
+      /* --- simple reset --- */
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      /* page center */
+      .stage {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+      }
+
+      /* a container we can position things inside */
+      .face {
+        position: relative; /* children with position:absolute use this as their reference */
+        width: 70vmin; /* scales with viewport; vmin keeps it a square */
+        height: 70vmin;
+      }
+
+      /* HEAD (big pink circle) */
+      .head {
+        position: absolute;
+        inset: 0; /* top/right/bottom/left: 0; fill the .face box */
+        border-radius: 50%;
+        background: #f8b6c2; /* light pink */
+        border: 1.4vmin solid #000; /* thick black outline */
+        z-index: 1; /* draw above the ears */
+      }
+
+      /* EARS (two circles behind the head) */
+      .ear {
+        position: absolute;
+        width: 22vmin;
+        height: 22vmin;
+        border-radius: 50%;
+        background: #f8b6c2;
+        border: 1.4vmin solid #000;
+        top: -4vmin; /* push ears slightly above the head */
+        z-index: 0; /* behind the head */
+      }
+      .ear.left {
+        left: 6vmin;
+        transform: rotate(-20deg);
+      }
+      .ear.right {
+        right: 6vmin;
+        transform: rotate(20deg);
+      }
+
+      /* EYES (white circles) */
+      .eye {
+        position: absolute;
+        width: 14vmin;
+        height: 14vmin;
+        border-radius: 50%;
+        background: #fff;
+        border: 1.1vmin solid #000;
+        top: 22vmin;
+      }
+      .eye.left {
+        left: 16vmin;
+      }
+      .eye.right {
+        right: 16vmin;
+      }
+
+      /* pupils (black circles centered inside eyes) */
+      .eye .pupil {
+        position: absolute;
+        width: 6vmin;
+        height: 6vmin;
+        border-radius: 50%;
+        background: #000;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* SNOUT (rounded rectangle “pill”) */
+      .snout {
+        position: absolute;
+        width: 36vmin;
+        height: 18vmin;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 42vmin;
+        background: #ff6b88; /* darker pink */
+        border: 1.1vmin solid #000;
+        border-radius: 12vmin; /* big radius -> pill shape */
+      }
+
+      /* nostrils (two black ovals) */
+      .nostril {
+        position: absolute;
+        width: 6vmin;
+        height: 8vmin;
+        border-radius: 50%;
+        background: #000;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .nostril.left {
+        left: 9vmin;
+      }
+      .nostril.right {
+        right: 9vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="face">
+        <!-- ears sit behind the head -->
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <!-- head sits on top; eyes + snout live inside it -->
+        <div class="head">
+          <div class="eye left"><div class="pupil"></div></div>
+          <div class="eye right"><div class="pupil"></div></div>
+
+          <div class="snout">
+            <div class="nostril left"></div>
+            <div class="nostril right"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main container */
+.container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* space between child elements */
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input styling */
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="number"]:focus {
+  border-color: #007bff;
+}
+
+/* Button styling */
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Result paragraph */
+#rezultat {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-top: 10px;
+}
+#imc {
+  font-size: 16px;
+  color: #181c19;
+  margin-top: 1px;
+}

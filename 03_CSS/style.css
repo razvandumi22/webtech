@@ -1,0 +1,27 @@
+h3 {
+  color: green;
+  background-color: gray;
+  text-align: center;
+}
+p {
+  color: chocolate;
+  text-transform: uppercase;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+button {
+  background-color: darkgreen;
+  color: azure;
+  font-size: 40px;
+}
+input {
+  width: 40%;
+  border: 3px solid red;
+}
+img {
+  border-radius: 50%;
+  width: 800px;
+  padding: 60px;
+  border: 1px solid;
+}
